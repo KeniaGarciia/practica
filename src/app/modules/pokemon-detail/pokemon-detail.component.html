@@ -1,0 +1,40 @@
+<button type="button" class="btn btn-success" (click)="goBack()">Regresar</button>
+<div class="card container"  >
+  <div class="d-flex" style=" margin: auto;">
+  <img [src]="img" class=" p-1" alt="...">
+  <img [src]="imgShyny" class="p-1" alt="...">
+
+  </div>
+<h1 style="text-align: center;">{{name}}</h1>
+<table class="table table-bordered" style="width: 35rem; text-align: center; margin: auto; margin-bottom: 3rem;">
+  <tbody>
+    <tr>
+      <th scope="row" class="table-active" colspan="3" style="text-align: center;">Tipo</th>
+    </tr>
+    <tr>
+      <ng-container *ngFor="let types of type; let indice=index">
+        <td colspan="1">{{types.type.name}}</td>
+      </ng-container>
+    </tr>
+    <tr>
+      <th scope="row"  class="table-active"  colspan="3" style="text-align: center;">Habilidad</th>
+    </tr>
+    <tr>
+      <ng-container *ngFor="let abilitie of abilities; let indice=index">
+        <td>{{abilitie.ability.name}}</td>
+      </ng-container>
+    </tr>
+    <tr>
+      <th scope="row"  class="table-active"  colspan="5" style="text-align: center;">Stats</th>
+    </tr>
+
+      <ng-container *ngFor="let stat of stats; let indice=index">
+        <tr>
+        <td colspan="1" >{{stat.stat.name}}</td>
+        <td colspan="2">{{stat.base_stat}}</td>
+      </tr>
+      </ng-container>
+  </tbody>
+</table>
+
+</div>
